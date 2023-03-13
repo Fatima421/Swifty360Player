@@ -67,6 +67,10 @@ open class Swifty360PlayerScene: SCNScene {
         player.pause()
         videoNode.isPaused = true
     }
+    
+    func setCameraNodeOrientation(newOrientation: SCNQuaternion) {
+        cameraNode.orientation = newOrientation
+    }
 
     internal func getScene() -> SKScene {
         let assetTrack = player.currentItem?.asset.tracks(withMediaType: .video).first
