@@ -90,7 +90,7 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
 
     private var underlyingSceneSize: CGSize!
     private var sceneView: SCNView!
-    private var playerScene: Swifty360PlayerScene!
+    public var playerScene: Swifty360PlayerScene!
     private var cameraController: Swifty360CameraController!
     private var playerView = UIView()
 

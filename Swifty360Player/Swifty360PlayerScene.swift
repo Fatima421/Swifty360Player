@@ -37,7 +37,7 @@ open class Swifty360PlayerScene: SCNScene {
         cameraNode.position = SCNVector3Make(0.0, 0.0, 0.0)
         return cameraNode
     }
-    public var player: AVPlayer!
+    private var player: AVPlayer!
 
     public init(withAVPlayer player: AVPlayer, view: SCNView) {
         super.init()
