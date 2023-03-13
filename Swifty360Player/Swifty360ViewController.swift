@@ -90,7 +90,7 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
 
     private var underlyingSceneSize: CGSize!
     private var sceneView: SCNView!
-    public var playerScene: Swifty360PlayerScene!
+    private var playerScene: Swifty360PlayerScene!
     private var cameraController: Swifty360CameraController!
     private var playerView = UIView()
 
@@ -213,6 +213,10 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
             strongSelf.delegate?.didUpdateCompassAngle(withViewController: strongSelf,
                                                        compassAngle: strongSelf.compassAngle)
         }
+    }
+    
+    open func getPlayerScene() -> Swifty360PlayerScene {
+        return playerScene
     }
 
     public func userInitallyMovedCamera(withCameraController controller: Swifty360CameraController, cameraMovedViewMethod: Swifty360UserInteractionMethod) {
