@@ -91,7 +91,7 @@ open class Swifty360View: UIView {
 
     private var underlyingSceneSize: CGSize!
     private var sceneView: SCNView!
-    private var playerScene: Swifty360PlayerScene!
+    public var playerScene: Swifty360PlayerScene!
 
     public init(withFrame frame: CGRect,
                 player: AVPlayer,
