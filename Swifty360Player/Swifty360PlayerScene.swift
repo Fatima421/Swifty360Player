@@ -31,12 +31,16 @@ open class Swifty360PlayerScene: SCNScene {
     public let camera = SCNCamera()
     private var videoPlaybackIsPaused: Bool!
     private var videoNode: SwiftySKVideoNode!
-    public var cameraNode: SCNNode!
+    public var cameraNode: SCNNode! {
+        let cameraNode = SCNNode()
+        cameraNode.camera = camera
+        cameraNode.position = SCNVector3Make(0.0, 0.0, 0.0)
+        return cameraNode
+    }
     private var player: AVPlayer!
 
     public init(withAVPlayer player: AVPlayer, view: SCNView) {
         super.init()
-        self.cameraNode = setCameraNodeValue(vector: SCNVector3Make(0.0, 0.0, 0.0))
         self.videoPlaybackIsPaused = true
         self.player = player
         self.rootNode.addChildNode(self.cameraNode)
@@ -62,17 +66,6 @@ open class Swifty360PlayerScene: SCNScene {
         videoPlaybackIsPaused = true
         player.pause()
         videoNode.isPaused = true
-    }
-    
-    open func setCameraNodeValue(vector: SCNVector3?) -> SCNNode {
-        var cameraNode = SCNNode()
-        cameraNode.camera = camera
-        if let vector = vector {
-            cameraNode.position = vector
-        } else {
-            cameraNode.position = SCNVector3Make(0.0, 0.0, 0.0)
-        }
-        return cameraNode
     }
 
     internal func getScene() -> SKScene {
