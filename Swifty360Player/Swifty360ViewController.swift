@@ -180,6 +180,10 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
     open func pause() {
         playerScene.pause()
     }
+    
+    open func getPlayerScene() -> Swifty360PlayerScene {
+        return playerScene
+    }
 
     open func reorientVerticalCameraAngleToHorizon(animated: Bool) {
         cameraController.reorientVerticalCameraAngleToHorizon(animated: animated)
@@ -213,10 +217,6 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
             strongSelf.delegate?.didUpdateCompassAngle(withViewController: strongSelf,
                                                        compassAngle: strongSelf.compassAngle)
         }
-    }
-    
-    open func getPlayerScene() -> Swifty360PlayerScene {
-        return playerScene
     }
 
     public func userInitallyMovedCamera(withCameraController controller: Swifty360CameraController, cameraMovedViewMethod: Swifty360UserInteractionMethod) {

@@ -31,7 +31,7 @@ open class Swifty360PlayerScene: SCNScene {
     public let camera = SCNCamera()
     private var videoPlaybackIsPaused: Bool!
     private var videoNode: SwiftySKVideoNode!
-    private var cameraNode: SCNNode! {
+    public var cameraNode: SCNNode! {
         let cameraNode = SCNNode()
         cameraNode.camera = camera
         cameraNode.position = SCNVector3Make(0.0, 0.0, 0.0)
