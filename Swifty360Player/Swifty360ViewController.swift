@@ -189,7 +189,7 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
         playerScene.cameraNode
     }
     
-    func setCameraNodeOrientation(newOrientation: SCNQuaternion) {
+    open func setCameraNodeOrientation(newOrientation: SCNQuaternion) {
         playerScene.cameraNode.orientation = newOrientation
     }
 
