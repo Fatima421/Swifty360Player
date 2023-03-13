@@ -41,5 +41,10 @@ extension CGFloat {
     func getDouble() -> Double {
         return Double(self)
     }
+}
 
+extension FloatingPoint {
+    var degreesToRadians: Self {
+        return self * .pi / 180
+    }
 }
