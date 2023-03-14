@@ -60,7 +60,7 @@ public protocol Swifty360ViewDelegate: AnyObject {
     return CGRect(x: 0.0, y: 0.0, width: maxValue, height: minValue)
 }
 
-open class Swifty360View: UIView {
+@objc public class Swifty360View: UIView {
 
     open weak var delegate: Swifty360ViewDelegate?
     open var player: AVPlayer!

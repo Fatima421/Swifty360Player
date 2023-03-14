@@ -26,17 +26,18 @@ import SceneKit
 import SpriteKit
 import AVFoundation
 
-open class Swifty360PlayerScene: SCNScene {
+@objc public class Swifty360PlayerScene: SCNScene {
 
     public let camera = SCNCamera()
     private var videoPlaybackIsPaused: Bool!
     private var videoNode: SwiftySKVideoNode!
-    public var cameraNode: SCNNode! {
-        let cameraNode = SCNNode()
-        cameraNode.camera = camera
-        cameraNode.position = SCNVector3Make(0.0, 0.0, 0.0)
-        return cameraNode
-    }
+    public lazy var cameraNode: SCNNode = {
+        let node = SCNNode()
+        let camera = SCNCamera()
+        node.camera = camera
+        return node
+    }()
+    
     private var player: AVPlayer!
 
     public init(withAVPlayer player: AVPlayer, view: SCNView) {
